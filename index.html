@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Insight Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0b1220;
+      color: #e2e8f0;
+    }header {
+  background: #020617;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #38bdf8;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #94a3b8;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  color: #64748b;
+  margin-top: 40px;
+}
+
+button {
+  background: #38bdf8;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+  </style>
+</head>
+<body>  <header>
+    <h1>Global Insight Hub</h1>
+    <nav>
+      <a onclick="scrollToSection('home')">Home</a>
+      <a onclick="scrollToSection('topics')">Topics</a>
+      <a onclick="scrollToSection('latest')">Latest</a>
+      <a onclick="scrollToSection('contact')">Contact</a>
+    </nav>
+  </header>  <section class="hero" id="home">
+    <h2>Your Source for Global Updates</h2>
+    <p>Stay informed with curated insights across technology, AI, finance, health, psychology, food, and science. This is a starter layout you can expand into a full content platform.</p>
+    <button onclick="alert('Welcome to Global Insight Hub!')">Get Started</button>
+  </section>  <section class="container" id="topics">
+    <h2>Topics</h2>
+    <div class="grid">
+      <div class="card"><h3>Tech</h3><p>Latest trends in software, hardware, and innovation.</p></div>
+      <div class="card"><h3>AI</h3><p>Artificial intelligence news, tools, and breakthroughs.</p></div>
+      <div class="card"><h3>Finance</h3><p>Markets, investing, crypto, and economic insights.</p></div>
+      <div class="card"><h3>Wellbeing</h3><p>Mental health, fitness, and lifestyle guidance.</p></div>
+      <div class="card"><h3>Food</h3><p>Recipes, trends, and global cuisine exploration.</p></div>
+      <div class="card"><h3>Psychology</h3><p>Human behavior, thinking patterns, and insights.</p></div>
+      <div class="card"><h3>Science</h3><p>Discoveries, space, physics, and research updates.</p></div>
+      <div class="card"><h3>News</h3><p>General world updates and important events.</p></div>
+    </div>
+  </section>  <section class="container" id="latest">
+    <h2>Latest Highlights</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Tech Update</h3>
+        <p>New advancements in AI tools are transforming productivity and content creation.</p>
+      </div>
+      <div class="card">
+        <h3>Finance Insight</h3>
+        <p>Global markets are reacting to inflation trends and economic policy changes.</p>
+      </div>
+      <div class="card">
+        <h3>Health Trend</h3>
+        <p>More focus is being placed on mental wellbeing and balanced lifestyles.</p>
+      </div>
+    </div>
+  </section>  <section class="container" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: your@email.com</p>
+      <p>Social: Add your links here</p>
+    </div>
+  </section>  <footer>
+    <p>© 2026 Global Insight Hub. All rights reserved.</p>
+  </footer>  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script></body>
+</html>

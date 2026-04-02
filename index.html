@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Global Insight Hub</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -108,18 +107,27 @@ h2 {
 
 /* CARDS */
 .card {
+  display: block;
+  text-decoration: none;
   background: rgba(30, 41, 59, 0.6);
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 16px;
   transition: 0.3s;
   border: 1px solid rgba(255,255,255,0.05);
+  color: #e2e8f0;
 }
 
 .card:hover {
   transform: translateY(-6px);
   border: 1px solid #38bdf8;
   box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
@@ -154,44 +162,123 @@ footer {
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h2>Stay Ahead of the World</h2>
   <p>Breaking insights across AI, tech, finance, psychology, and global trends — all in one place.</p>
-  <button class="cta-btn" onclick="alert('Welcome to Global Insight Hub!')">Explore Now</button>
+  <button class="cta-btn" onclick="window.location.href='news.html'">
+    Explore Now
+  </button>
 </section>
 
+<!-- TOPICS -->
 <section class="container">
   <h2>Explore Topics</h2>
   <div class="grid">
-    <div class="card"><h3>Tech</h3><p>Innovation shaping the future.</p></div>
-    <div class="card"><h3>AI</h3><p>The rise of artificial intelligence.</p></div>
-    <div class="card"><h3>Finance</h3><p>Markets and money insights.</p></div>
-    <div class="card"><h3>Wellbeing</h3><p>Better mental and physical health.</p></div>
-    <div class="card"><h3>Food</h3><p>Global flavors and trends.</p></div>
-    <div class="card"><h3>Psychology</h3><p>Understand human behavior.</p></div>
-    <div class="card"><h3>Science</h3><p>New discoveries and research.</p></div>
-    <div class="card"><h3>News</h3><p>What’s happening worldwide.</p></div>
+
+    <a href="tech.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?technology">
+      <h3>Tech</h3>
+      <p>Innovation shaping the future.</p>
+    </a>
+
+    <a href="ai.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?artificial-intelligence">
+      <h3>AI</h3>
+      <p>The rise of artificial intelligence.</p>
+    </a>
+
+    <a href="finance.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?finance,stock">
+      <h3>Finance</h3>
+      <p>Markets and money insights.</p>
+    </a>
+
+    <a href="wellbeing.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?wellbeing,health">
+      <h3>Wellbeing</h3>
+      <p>Better mental and physical health.</p>
+    </a>
+
+    <a href="food.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?food">
+      <h3>Food</h3>
+      <p>Global flavors and trends.</p>
+    </a>
+
+    <a href="psychology.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?psychology">
+      <h3>Psychology</h3>
+      <p>Understand human behavior.</p>
+    </a>
+
+    <a href="science.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?science">
+      <h3>Science</h3>
+      <p>New discoveries and research.</p>
+    </a>
+
+    <a href="news.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?news">
+      <h3>News</h3>
+      <p>What’s happening worldwide.</p>
+    </a>
+
   </div>
 </section>
 
+<!-- TRENDING -->
 <section class="container">
   <h2>Trending Now</h2>
   <div class="grid">
-    <div class="card">
+
+    <a href="article-ai.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?ai,future">
       <h3>AI Revolution</h3>
       <p>AI tools are reshaping how people work and create content.</p>
-    </div>
-    <div class="card">
+    </a>
+
+    <a href="article-finance.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?stock,market">
       <h3>Market Shifts</h3>
       <p>Investors reacting to global economic changes.</p>
-    </div>
-    <div class="card">
+    </a>
+
+    <a href="article-health.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?mental-health">
       <h3>Mental Health Focus</h3>
       <p>More people prioritizing wellbeing in daily life.</p>
-    </div>
+    </a>
+
   </div>
 </section>
 
+<!-- LATEST ARTICLES -->
+<section class="container">
+  <h2>Latest Articles</h2>
+  <div class="grid">
+
+    <a href="article1.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?finance">
+      <h3>Global Markets Are Shifting Fast</h3>
+      <p>Experts warn of major changes in 2026 economy.</p>
+    </a>
+
+    <a href="article2.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?ai,robot">
+      <h3>AI Is Replacing Jobs?</h3>
+      <p>What this means for young people entering work.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- AD SPACE -->
+<div style="text-align:center; margin:40px;">
+  <p>Ad Space (Google AdSense later)</p>
+</div>
+
+<!-- CONTACT -->
 <section class="container">
   <h2>Contact</h2>
   <div class="card">

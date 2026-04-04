@@ -1,23 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Science</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+nav a:hover {
+  background: rgba(56,189,248,0.15);
+  color: #7dd3fc;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  color: #94a3b8;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(30,41,59,0.6);
+  padding: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #e2e8f0;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #38bdf8;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Science</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">Global Insight Hub</div>
 
-  <h2>Science Updates</h2>
-  <ul>
-    <li>Space exploration continues to expand human knowledge</li>
-    <li>Medical research is improving global health outcomes</li>
-    <li>New discoveries in physics and biology are ongoing</li>
-  </ul>
+  <nav>
+    <a href="news.html">News</a>
+    <a href="wellbeing.html">Wellbeing</a>
+    <a href="science.html">Science</a>
+    <a href="finance.html">Finance</a>
+    <a href="tech.html">Tech</a>
+    <a href="food.html">Food</a>
+    <a href="ai.html">AI</a>
+    <a href="psychology.html">Psychology</a>
+    <a href="index.html">🏠 Home</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>🔬 Science & Discovery</h2>
+  <p>Breakthroughs, research, and the ideas shaping our future.</p>
+</section>
+
+<!-- FEATURED -->
+<section class="container">
+  <h2>🔥 Featured</h2>
+  <div class="grid">
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?space">
+      <h3>Scientists Discover Signals From Deep Space</h3>
+      <p>📅 April 2026 • ⏱ 4 min read</p>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?biology">
+      <h3>A New Breakthrough in Human Longevity</h3>
+      <p>📅 April 2026 • ⏱ 5 min read</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- LATEST -->
+<section class="container">
+  <h2>🆕 Latest</h2>
+  <div class="grid">
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?climate">
+      <h3>Climate Change Is Accelerating Faster Than Expected</h3>
+      <p>New reports raise concerns worldwide.</p>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?robotics">
+      <h3>Robots Are Becoming Smarter Than Ever</h3>
+      <p>AI meets physical machines in new ways.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- QUICK FACTS -->
+<section class="container">
+  <h2>💡 Quick Facts</h2>
+  <div class="card">
+    <ul>
+      <li>The universe is over 13.8 billion years old</li>
+      <li>Water can exist in three states naturally on Earth</li>
+      <li>The human brain has ~86 billion neurons</li>
+      <li>Space exploration is rapidly advancing in 2026</li>
+    </ul>
+  </div>
+</section>
 
 </body>
 </html>

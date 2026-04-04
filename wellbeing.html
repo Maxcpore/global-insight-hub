@@ -1,24 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Wellbeing</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellbeing | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  position: relative;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 4px;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #7dd3fc;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #020617;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  color: #94a3b8;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(30,41,59,0.6);
+  padding: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #e2e8f0;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #38bdf8;
+}
+
+/* BACK */
+.back {
+  display: inline-block;
+  margin: 20px;
+  color: #38bdf8;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Wellbeing</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">Global Insight Hub</div>
 
-  <h2>Mental & Physical Wellbeing</h2>
-  <ul>
-    <li>Maintaining a balanced lifestyle improves overall health</li>
-    <li>Regular exercise supports both body and mind</li>
-    <li>Sleep quality plays a key role in productivity</li>
-    <li>Mindfulness and relaxation techniques are widely used</li>
-  </ul>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="navMenu">
+    <a href="news.html">🔥 News</a>
+    <a href="ai.html">AI</a>
+    <a href="tech.html">Tech</a>
+    <a href="finance.html">Finance</a>
+    <a href="psychology.html">Psychology</a>
+    <a href="science.html">Science</a>
+    <a href="food.html">Food</a>
+    <a href="wellbeing.html">Wellbeing</a>
+  </nav>
+</header>
+
+<a href="index.html" class="back">← Back Home</a>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>🧠 Wellbeing & Mental Health</h2>
+  <p>Simple habits, powerful mindset shifts, and the science of feeling better in 2026.</p>
+</section>
+
+<!-- FEATURED -->
+<section class="container">
+  <h2>🔥 Featured</h2>
+  <div class="grid">
+
+    <a href="article-health.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?mental-health">
+      <h3>Why Everyone Is Talking About Mental Health in 2026</h3>
+      <p>📅 April 2026 • ⏱ 5 min read</p>
+    </a>
+
+    <a href="article-sleep.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?sleep">
+      <h3>The Sleep Crisis No One Is Taking Seriously</h3>
+      <p>📅 April 2026 • ⏱ 4 min read</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- LATEST -->
+<section class="container">
+  <h2>🆕 Latest</h2>
+  <div class="grid">
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?meditation">
+      <h3>This 5-Minute Habit Is Changing Lives</h3>
+      <p>Small daily routines making a big impact.</p>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://source.unsplash.com/400x250/?exercise">
+      <h3>Why Exercise Is Now More About Mental Health</h3>
+      <p>It’s not just about fitness anymore.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- QUICK TIPS -->
+<section class="container">
+  <h2>💡 Quick Tips</h2>
+  <div class="card">
+    <ul>
+      <li>Get 7–9 hours of sleep consistently</li>
+      <li>Limit screen time before bed</li>
+      <li>Move your body daily</li>
+      <li>Take breaks from social media</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("navMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>

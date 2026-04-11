@@ -1,24 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Psychology</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psychology | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<meta name="description" content="Explore psychology insights, human behavior, mindset, and mental health trends.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e2e8f0;
+}
+
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.85);
+  padding: 15px 20px;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #7dd3fc;
+}
+
+/* HERO */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: radial-gradient(circle at center, #38bdf8 0%, transparent 60%);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  display: block;
+  text-decoration: none;
+  background: rgba(30, 41, 59, 0.6);
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Psychology</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<header>
+  <h1>Global Insight Hub</h1>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="news.html">📰 News</a>
+    <a href="wellbeing.html">🌿 Well-being</a>
+    <a href="science.html">🔬 Science</a>
+    <a href="finance.html">💰 Finance</a>
+    <a href="tech.html">💻 Tech</a>
+    <a href="food.html">🍜 Food</a>
+    <a href="ai.html">🤖 AI</a>
+    <a href="psychology.html">🧠 Psychology</a>
+  </nav>
+</header>
 
-  <h2>Human Behavior & Mind</h2>
-  <ul>
-    <li>Human decision-making is influenced by emotions and biases</li>
-    <li>Habits play a major role in shaping daily behavior</li>
-    <li>Stress management is important for mental clarity</li>
-    <li>Understanding psychology helps improve communication and relationships</li>
-  </ul>
+<!-- HERO -->
+<section class="hero">
+  <h2>🧠 Psychology & Human Behavior</h2>
+  <p>Understand how people think, feel, and act — from mindset to mental health and decision-making.</p>
+</section>
+
+<!-- FEATURED -->
+<section class="container">
+  <h2>🔥 Featured Story</h2>
+
+  <a href="article-psychology1.html" class="card">
+    <img src="https://source.unsplash.com/400x250/?mind,brain">
+    <h3>⚠️ Why Your Brain Is Addicted to Short Videos — And How It’s Changing You</h3>
+    <p class="meta">🔥 Trending • 4 min read</p>
+    <p>Short-form content is reshaping attention spans worldwide. Here’s what’s happening inside your brain.</p>
+  </a>
+</section>
+
+<!-- TRENDING -->
+<section class="container">
+  <h2>📈 Trending Psychology Topics</h2>
+
+  <div class="grid">
+
+    <a href="article-psychology2.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?stress">
+      <h3>Stress Levels Are Rising Globally</h3>
+      <p class="meta">3 min read</p>
+      <p>Why modern life is increasing anxiety and what you can do about it.</p>
+    </a>
+
+    <a href="article-psychology3.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?focus">
+      <h3>Why You Can’t Focus Anymore</h3>
+      <p class="meta">5 min read</p>
+      <p>Distractions are everywhere — here’s how your brain is adapting.</p>
+    </a>
+
+    <a href="article-psychology4.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?habits">
+      <h3>The Science of Building Habits</h3>
+      <p class="meta">4 min read</p>
+      <p>Simple psychological tricks to make habits stick.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- LATEST -->
+<section class="container">
+  <h2>📰 Latest Articles</h2>
+
+  <div class="grid">
+
+    <a href="article-psychology5.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?sleep">
+      <h3>Sleep Deprivation Is Affecting Your Brain</h3>
+      <p class="meta">2 min read</p>
+      <p>Not getting enough sleep has deeper psychological effects than you think.</p>
+    </a>
+
+    <a href="article-psychology6.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?social-media">
+      <h3>Social Media and Mental Health</h3>
+      <p class="meta">4 min read</p>
+      <p>How constant scrolling is impacting self-esteem and mood.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="container">
+  <div class="card" style="text-align:center;">
+    <h3>🚀 Want to improve your mindset?</h3>
+    <p>Explore more psychology insights and learn how to think better, focus more, and live smarter.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Global Insight Hub. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

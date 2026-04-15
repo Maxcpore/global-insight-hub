@@ -1,23 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tech News</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Article | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050816;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* futuristic animated background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 10% 20%, rgba(0,255,255,0.10), transparent 25%),
+    radial-gradient(circle at 80% 10%, rgba(123,97,255,0.12), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(255,0,180,0.08), transparent 35%);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+    opacity:0.3;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(8,12,30,0.75);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+    max-width:1450px;
+    margin:auto;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#00eaff,#7f5cff,#ff00cc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:12px;
+    transition:0.3s ease;
+    font-size:0.95rem;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.08);
+    color:#00eaff;
+    transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+    max-width:1400px;
+    margin:auto;
+    padding:80px 24px 40px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:30px;
+    color:#00eaff;
+    margin-bottom:18px;
+    font-size:0.9rem;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    line-height:1.1;
+    max-width:900px;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:800px;
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:1.08rem;
+}
+
+/* LAYOUT */
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:20px 24px 80px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+}
+
+/* ARTICLE */
+.article{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:26px;
+    padding:32px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.article img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:24px;
+}
+
+.article h2{
+    margin:26px 0 12px;
+    font-size:1.7rem;
+}
+
+.article p{
+    color:#dbe4ee;
+    line-height:1.9;
+    margin-bottom:16px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:22px;
+    padding:22px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.25);
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:1.08rem;
+}
+
+.card p{
+    color:#b8c1cc;
+    line-height:1.6;
+    font-size:0.95rem;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.06);
+    background:rgba(255,255,255,0.02);
+}
+
+/* MOBILE */
+@media(max-width:980px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+}
+</style>
 </head>
 <body>
 
-  <h1>Technology</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<header>
+    <div class="navbar">
+        <div class="logo">Global Insight Hub</div>
 
-  <h2>Latest Tech Trends</h2>
-  <ul>
-    <li>Artificial intelligence tools are becoming more accessible</li>
-    <li>Cloud computing continues to expand globally</li>
-    <li>Cybersecurity is becoming more important than ever</li>
-  </ul>
+        <nav>
+            <a href="news.html">News</a>
+            <a href="wellbeing.html">Well-being</a>
+            <a href="science.html">Science</a>
+            <a href="finance.html">Finance</a>
+            <a href="tech.html">Tech</a>
+            <a href="food.html">Food</a>
+            <a href="ai.html">AI</a>
+            <a href="psychology.html">Psychology</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="badge">TECH FEATURE</div>
+    <h1>The New Era of Technology: Faster, Smarter, More Human</h1>
+    <p>
+        Technology is evolving beyond screens and devices. From intelligent assistants to immersive digital worlds,
+        the next wave of innovation is transforming how we work, learn, create, and connect.
+    </p>
+</section>
+
+<section class="container">
+
+    <main class="article">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="Technology">
+
+        <h2>1. AI Is Powering Everything</h2>
+        <p>
+            Artificial intelligence is now embedded in search tools, business platforms, healthcare systems,
+            education apps, and creative software. It helps automate tasks, improve decisions, and unlock new ideas.
+        </p>
+
+        <h2>2. Devices Are Becoming Invisible</h2>
+        <p>
+            The future of tech is less about bulky hardware and more about seamless experiences. Smart glasses,
+            voice interfaces, wearables, and connected environments are making technology feel natural and effortless.
+        </p>
+
+        <h2>3. Cybersecurity Matters More Than Ever</h2>
+        <p>
+            As digital life expands, protecting privacy and data becomes essential. The next generation of security
+            tools will rely on smarter detection, faster responses, and stronger trust systems.
+        </p>
+
+        <h2>4. Why It Matters</h2>
+        <p>
+            Young people entering the future economy will benefit most from digital skills, creativity, and adaptability.
+            Technology is changing jobs, industries, and opportunities faster than ever before.
+        </p>
+
+        <h2>Final Thoughts</h2>
+        <p>
+            The future belongs to those who learn fast and build boldly. Technology is no longer optional—it is the
+            language of tomorrow.
+        </p>
+    </main>
+
+    <aside class="sidebar">
+        <div class="card">
+            <h3>Trending Tech</h3>
+            <p>AI tools, robotics, smart devices, creator platforms, and next-gen coding are leading attention.</p>
+        </div>
+
+        <div class="card">
+            <h3>Editor's Pick</h3>
+            <p>How students can start learning future-proof tech skills today with free tools online.</p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Insight</h3>
+            <p>The best technology blends speed, simplicity, trust, and beautiful design.</p>
+        </div>
+    </aside>
+
+</section>
+
+<footer>
+    © 2026 Global Insight Hub — Technology for Tomorrow
+</footer>
 
 </body>
 </html>

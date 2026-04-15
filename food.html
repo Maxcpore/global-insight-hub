@@ -1,24 +1,308 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Food</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Article | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#fff8f0,#fff,#fff4e6);
+    color:#1f2937;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.navbar{
+    max-width:1450px;
+    margin:auto;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#ff7b00,#ff3c78,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111827;
+    padding:10px 14px;
+    border-radius:12px;
+    transition:0.3s ease;
+    font-size:0.95rem;
+}
+
+nav a:hover{
+    background:#fff1e6;
+    color:#ff6600;
+    transform:translateY(-2px);
+}
+
+/* Hero */
+.hero{
+    max-width:1450px;
+    margin:auto;
+    padding:70px 24px 30px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    background:#fff1e6;
+    color:#ff6600;
+    border-radius:30px;
+    font-size:0.9rem;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:30px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:1.08rem;
+    line-height:1.8;
+    color:#4b5563;
+    max-width:700px;
+}
+
+.hero img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Layout */
+.container{
+    max-width:1450px;
+    margin:auto;
+    padding:20px 24px 80px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+}
+
+/* Article */
+.article{
+    background:white;
+    border-radius:26px;
+    padding:34px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+
+.article h2{
+    font-size:1.6rem;
+    margin:26px 0 12px;
+}
+
+.article p{
+    line-height:1.9;
+    color:#374151;
+    margin-bottom:16px;
+}
+
+/* Sidebar */
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.card{
+    background:white;
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 14px 35px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:1.05rem;
+}
+
+.card p{
+    color:#4b5563;
+    line-height:1.6;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#6b7280;
+    border-top:1px solid rgba(0,0,0,0.06);
+}
+
+/* Mobile */
+@media(max-width:980px){
+    .hero-grid,
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+}
+</style>
 </head>
 <body>
 
-  <h1>Food</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<header>
+    <div class="navbar">
+        <div class="logo">Global Insight Hub</div>
 
-  <h2>Food Trends & Insights</h2>
-  <ul>
-    <li>Plant-based diets are becoming more popular worldwide</li>
-    <li>People are focusing more on healthy, balanced meals</li>
-    <li>Home cooking and meal prep are increasing</li>
-    <li>Global cuisines are influencing everyday eating habits</li>
-  </ul>
+        <nav>
+            <a href="news.html">News</a>
+            <a href="wellbeing.html">Well-being</a>
+            <a href="science.html">Science</a>
+            <a href="finance.html">Finance</a>
+            <a href="tech.html">Tech</a>
+            <a href="food.html">Food</a>
+            <a href="ai.html">AI</a>
+            <a href="psychology.html">Psychology</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="badge">FOOD FEATURE</div>
+
+    <div class="hero-grid">
+        <div>
+            <h1>The Future of Food: Flavor, Health & Creativity Combined</h1>
+            <p>
+                Food is evolving beyond taste alone. Modern kitchens now combine nutrition,
+                sustainability, bold design, and exciting experiences. From healthy comfort meals
+                to global fusion trends, the future of food has never looked better.
+            </p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Food">
+    </div>
+</section>
+
+<section class="container">
+
+    <main class="article">
+
+        <h2>1. Healthy Food Can Still Taste Amazing</h2>
+        <p>
+            Today’s best meals balance flavor and nutrition. More people are choosing dishes packed
+            with protein, fresh ingredients, fiber, and vibrant colors without sacrificing taste.
+        </p>
+
+        <h2>2. Global Flavors Are Everywhere</h2>
+        <p>
+            Fusion cuisine is growing fast. Restaurants and home cooks are blending ingredients and
+            styles from different cultures to create exciting new combinations.
+        </p>
+
+        <h2>3. Presentation Matters</h2>
+        <p>
+            Modern food culture is visual. Beautiful plating, creative textures, and eye-catching
+            colors turn meals into experiences people love to share online.
+        </p>
+
+        <h2>4. Sustainable Choices</h2>
+        <p>
+            Many consumers now care about where ingredients come from. Seasonal produce, lower waste,
+            and thoughtful sourcing are shaping the future of dining.
+        </p>
+
+        <h2>Final Thoughts</h2>
+        <p>
+            Food in the future is smarter, healthier, and more creative. Whether cooking at home or
+            exploring new places, there has never been a better time to enjoy what’s on your plate.
+        </p>
+
+    </main>
+
+    <aside class="sidebar">
+
+        <div class="card">
+            <h3>Trending Now</h3>
+            <p>High-protein meals, matcha desserts, Asian fusion, healthy comfort food, premium coffee.</p>
+        </div>
+
+        <div class="card">
+            <h3>Editor's Pick</h3>
+            <p>5 easy meals that look restaurant quality but are simple to make at home.</p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Insight</h3>
+            <p>The best food experiences combine taste, atmosphere, health, and creativity.</p>
+        </div>
+
+    </aside>
+
+</section>
+
+<footer>
+    © 2026 Global Insight Hub — Fresh Ideas Daily
+</footer>
 
 </body>
 </html>

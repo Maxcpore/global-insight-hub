@@ -5,189 +5,456 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Science | Global Insight Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #020617, #0f172a);
-  color: #e2e8f0;
-  margin: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#07111f;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* cosmic animated background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 15% 20%, rgba(0,255,255,0.12), transparent 25%),
+    radial-gradient(circle at 85% 15%, rgba(139,92,246,0.14), transparent 30%),
+    radial-gradient(circle at 50% 85%, rgba(59,130,246,0.10), transparent 35%),
+    linear-gradient(135deg,#07111f,#0b1830,#091426);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,.7), transparent),
+      radial-gradient(2px 2px at 120px 90px, rgba(255,255,255,.5), transparent),
+      radial-gradient(1px 1px at 220px 180px, rgba(255,255,255,.6), transparent),
+      radial-gradient(2px 2px at 320px 40px, rgba(255,255,255,.5), transparent);
+    background-size:400px 240px;
+    opacity:.35;
+    z-index:-1;
 }
 
 /* HEADER */
-.header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 12px 20px;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,15,30,.72);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 6px;
+.navbar{
+    max-width:1500px;
+    margin:auto;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.logo{
+    font-size:1.65rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#22d3ee,#60a5fa,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-nav a {
-  color: #38bdf8;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: 0.3s;
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
-/* HOVER */
-nav a:hover {
-  background: rgba(56,189,248,0.15);
-  color: #7dd3fc;
+nav a{
+    text-decoration:none;
+    color:#fff;
+    padding:10px 14px;
+    border-radius:12px;
+    transition:.3s ease;
+    font-size:.95rem;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.08);
+    color:#67e8f9;
+    transform:translateY(-2px);
 }
 
 /* HERO */
-.hero {
-  padding: 60px 20px;
-  text-align: center;
+.hero{
+    max-width:1500px;
+    margin:auto;
+    padding:72px 24px 30px;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:28px;
+    align-items:center;
 }
 
-.hero p {
-  color: #94a3b8;
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:30px;
+    background:rgba(34,211,238,.12);
+    color:#67e8f9;
+    font-weight:700;
+    font-size:.9rem;
+    margin-bottom:18px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
+.hero h1{
+    font-size:3.3rem;
+    line-height:1.06;
+    margin-bottom:18px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+.hero p{
+    max-width:760px;
+    color:#cbd5e1;
+    line-height:1.9;
+    font-size:1.08rem;
 }
 
-/* CARD */
-.card {
-  background: rgba(30,41,59,0.6);
-  padding: 20px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: #e2e8f0;
-  transition: 0.3s;
+.discovery-panel{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+    padding:26px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 18px 45px rgba(0,0,0,.28);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border: 1px solid #38bdf8;
+.discovery-panel h3{
+    margin-bottom:14px;
+    font-size:1.2rem;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.discovery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
 }
 
-.card h3 {
-  color: #38bdf8;
+.discovery-box{
+    background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:18px;
+    padding:16px;
+}
+
+.discovery-box strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.discovery-box span{
+    color:#cbd5e1;
+    font-size:.92rem;
+}
+
+/* MAIN LAYOUT */
+.container{
+    max-width:1500px;
+    margin:auto;
+    padding:20px 24px 80px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+}
+
+.main{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+/* FEATURE CARD */
+.feature{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:34px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+
+.feature h2{
+    font-size:1.7rem;
+    margin-bottom:14px;
+}
+
+.feature p{
+    color:#dbe4ee;
+    line-height:1.9;
+    margin-bottom:16px;
+}
+
+/* CARDS GRID */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.mini-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:20px;
+    transition:.3s ease;
+}
+
+.mini-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.22);
+}
+
+.mini-card h4{
+    margin-bottom:10px;
+    font-size:1rem;
+}
+
+.mini-card p{
+    color:#cbd5e1;
+    line-height:1.7;
+    font-size:.95rem;
+}
+
+/* SIDEBAR */
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.side-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:22px;
+    backdrop-filter:blur(10px);
+    transition:.3s ease;
+}
+
+.side-card:hover{
+    transform:translateY(-6px);
+}
+
+.side-card h3{
+    margin-bottom:10px;
+}
+
+.side-card p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.quote{
+    font-size:1.12rem;
+    font-weight:600;
+    color:#fff;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+@media(max-width:1100px){
+    .hero-grid,
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.35rem;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo">Global Insight Hub</div>
+<header>
+    <div class="navbar">
+        <div class="logo">Global Insight Hub</div>
 
-  <nav>
-    <a href="news.html">News</a>
-    <a href="wellbeing.html">Wellbeing</a>
-    <a href="science.html">Science</a>
-    <a href="finance.html">Finance</a>
-    <a href="tech.html">Tech</a>
-    <a href="food.html">Food</a>
-    <a href="ai.html">AI</a>
-    <a href="psychology.html">Psychology</a>
-    <a href="index.html">🏠 Home</a>
-  </nav>
+        <nav>
+            <a href="news.html">News</a>
+            <a href="wellbeing.html">Well-being</a>
+            <a href="science.html">Science</a>
+            <a href="finance.html">Finance</a>
+            <a href="tech.html">Tech</a>
+            <a href="food.html">Food</a>
+            <a href="ai.html">AI</a>
+            <a href="psychology.html">Psychology</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <h2>🔬 Science & Discovery</h2>
-  <p>Breakthroughs, research, and the ideas shaping our future.</p>
+    <div class="hero-grid">
+
+        <div>
+            <div class="badge">SCIENCE FEATURE</div>
+            <h1>Exploring the Universe, One Breakthrough at a Time</h1>
+            <p>
+                Science turns curiosity into discovery. From deep space to the human brain,
+                new research is reshaping what we know about life, energy, health, and the future.
+                Every answer leads to bigger questions.
+            </p>
+        </div>
+
+        <div class="discovery-panel">
+            <h3>Today's Frontiers</h3>
+
+            <div class="discovery-grid">
+                <div class="discovery-box">
+                    <strong>Space</strong>
+                    <span>New missions searching for habitable worlds.</span>
+                </div>
+
+                <div class="discovery-box">
+                    <strong>Biotech</strong>
+                    <span>Medicine becoming faster and more precise.</span>
+                </div>
+
+                <div class="discovery-box">
+                    <strong>Energy</strong>
+                    <span>Cleaner power systems for the next century.</span>
+                </div>
+
+                <div class="discovery-box">
+                    <strong>AI Research</strong>
+                    <span>Machines accelerating human discovery.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<!-- FEATURED -->
 <section class="container">
-  <h2>🔥 Featured</h2>
-  <div class="grid">
 
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x250/?space">
-      <h3>Scientists Discover Signals From Deep Space</h3>
-      <p>📅 April 2026 • ⏱ 4 min read</p>
-    </a>
+    <div class="main">
 
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x250/?biology">
-      <h3>A New Breakthrough in Human Longevity</h3>
-      <p>📅 April 2026 • ⏱ 5 min read</p>
-    </a>
+        <div class="feature">
+            <h2>Why Science Matters Right Now</h2>
+            <p>
+                Scientific progress affects daily life more than most people realise.
+                It shapes healthcare, transportation, climate solutions, food systems,
+                communications, and the technology we use every day.
+            </p>
 
-  </div>
+            <p>
+                The most exciting part of science is that it never truly finishes.
+                Each breakthrough opens the door to new possibilities.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="mini-card">
+                <h4>🌌 Space Discovery</h4>
+                <p>
+                    Telescopes are revealing galaxies, black holes, and planets once hidden from view.
+                </p>
+            </div>
+
+            <div class="mini-card">
+                <h4>🧬 Human Biology</h4>
+                <p>
+                    Researchers are learning how genes, sleep, and nutrition shape health outcomes.
+                </p>
+            </div>
+
+            <div class="mini-card">
+                <h4>⚡ Future Energy</h4>
+                <p>
+                    Solar, battery storage, and new materials could transform global power systems.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="feature">
+            <h2>The Next Generation of Thinkers</h2>
+            <p>
+                Students, creators, and curious minds will help define the future.
+                Asking better questions, testing ideas, and staying open-minded are
+                powerful skills in any scientific field.
+            </p>
+        </div>
+
+    </div>
+
+    <aside class="sidebar">
+
+        <div class="side-card">
+            <h3>Quote</h3>
+            <p class="quote">Science is curiosity organised into progress.</p>
+        </div>
+
+        <div class="side-card">
+            <h3>Trending Topics</h3>
+            <p>Quantum computing, longevity research, Mars missions, climate innovation, neuroscience.</p>
+        </div>
+
+        <div class="side-card">
+            <h3>Quick Fact</h3>
+            <p>
+                The atoms in your body were forged in ancient stars — science connects us to the cosmos.
+            </p>
+        </div>
+
+    </aside>
+
 </section>
 
-<!-- LATEST -->
-<section class="container">
-  <h2>🆕 Latest</h2>
-  <div class="grid">
-
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x250/?climate">
-      <h3>Climate Change Is Accelerating Faster Than Expected</h3>
-      <p>New reports raise concerns worldwide.</p>
-    </a>
-
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x250/?robotics">
-      <h3>Robots Are Becoming Smarter Than Ever</h3>
-      <p>AI meets physical machines in new ways.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- QUICK FACTS -->
-<section class="container">
-  <h2>💡 Quick Facts</h2>
-  <div class="card">
-    <ul>
-      <li>The universe is over 13.8 billion years old</li>
-      <li>Water can exist in three states naturally on Earth</li>
-      <li>The human brain has ~86 billion neurons</li>
-      <li>Space exploration is rapidly advancing in 2026</li>
-    </ul>
-  </div>
-</section>
+<footer>
+    © 2026 Global Insight Hub — Discover More, Think Bigger
+</footer>
 
 </body>
 </html>

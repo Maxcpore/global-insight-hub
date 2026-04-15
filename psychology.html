@@ -1,239 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Psychology | Global Insight Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<meta name="description" content="Explore psychology insights, human behavior, mindset, and mental health trends.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #020617, #0f172a);
-  color: #e2e8f0;
+html{
+    scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-header {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(2, 6, 23, 0.85);
-  padding: 15px 20px;
-  z-index: 1000;
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#070b18,#10172e,#1a1037);
+    color:#fff;
+    overflow-x:hidden;
 }
 
-header h1 {
-  font-size: 1.5rem;
+/* animated glow background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 12% 18%, rgba(59,130,246,.15), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(168,85,247,.16), transparent 30%),
+    radial-gradient(circle at 50% 85%, rgba(236,72,153,.12), transparent 35%);
+    z-index:-2;
 }
 
-nav {
-  margin-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:42px 42px;
+    z-index:-1;
+    opacity:.35;
 }
 
-nav a {
-  color: #38bdf8;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: 0.3s;
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(16px);
+    background:rgba(8,10,24,.72);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-nav a:hover {
-  color: #7dd3fc;
+.navbar{
+    max-width:1500px;
+    margin:auto;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:1.65rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    padding:10px 14px;
+    border-radius:12px;
+    transition:.3s ease;
+    font-size:.95rem;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.08);
+    color:#c4b5fd;
+    transform:translateY(-2px);
 }
 
 /* HERO */
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: radial-gradient(circle at center, #38bdf8 0%, transparent 60%);
+.hero{
+    max-width:1500px;
+    margin:auto;
+    padding:72px 24px 34px;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
+    align-items:center;
 }
 
-.hero p {
-  margin-top: 10px;
-  color: #94a3b8;
-  max-width: 600px;
-  margin-inline: auto;
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:30px;
+    background:rgba(167,139,250,.14);
+    color:#ddd6fe;
+    font-size:.9rem;
+    font-weight:700;
+    margin-bottom:18px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 50px 20px;
+.hero h1{
+    font-size:3.35rem;
+    line-height:1.05;
+    margin-bottom:18px;
 }
 
-h2 {
-  margin-bottom: 20px;
+.hero p{
+    color:#dbe4ee;
+    max-width:760px;
+    line-height:1.9;
+    font-size:1.08rem;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+.mind-panel{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:28px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
 
-/* CARDS */
-.card {
-  display: block;
-  text-decoration: none;
-  background: rgba(30, 41, 59, 0.6);
-  padding: 20px;
-  border-radius: 16px;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.05);
-  color: #e2e8f0;
+.mind-panel h3{
+    margin-bottom:14px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border: 1px solid #38bdf8;
-  box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+.rings{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
+.ring-card{
+    border-radius:22px;
+    padding:18px;
+    background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+    min-height:120px;
 }
 
-.card h3 {
-  color: #38bdf8;
-  margin-bottom: 8px;
+.ring-card strong{
+    display:block;
+    margin-bottom:8px;
 }
 
-.meta {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-bottom: 6px;
+.ring-card span{
+    color:#cbd5e1;
+    font-size:.93rem;
+    line-height:1.6;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
-  border-top: 1px solid rgba(255,255,255,0.05);
+/* MAIN */
+.container{
+    max-width:1500px;
+    margin:auto;
+    padding:20px 24px 80px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+}
+
+.main{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.feature{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:34px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+
+.feature h2{
+    font-size:1.7rem;
+    margin-bottom:14px;
+}
+
+.feature p{
+    color:#dbe4ee;
+    line-height:1.9;
+    margin-bottom:16px;
+}
+
+/* insight cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:22px;
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 35px rgba(0,0,0,.22);
+}
+
+.card h4{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#dbe4ee;
+    line-height:1.7;
+    font-size:.95rem;
+}
+
+/* sidebar */
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.side{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:26px;
+    padding:22px;
+    backdrop-filter:blur(14px);
+    transition:.3s ease;
+}
+
+.side:hover{
+    transform:translateY(-6px);
+}
+
+.side h3{
+    margin-bottom:10px;
+}
+
+.side p{
+    color:#dbe4ee;
+    line-height:1.75;
+}
+
+.quote{
+    font-size:1.15rem;
+    font-weight:600;
+    color:#fff;
+}
+
+/* footer */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#cbd5e1;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* mobile */
+@media(max-width:1100px){
+    .hero-grid,
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.35rem;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Global Insight Hub</h1>
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="news.html">📰 News</a>
-    <a href="wellbeing.html">🌿 Well-being</a>
-    <a href="science.html">🔬 Science</a>
-    <a href="finance.html">💰 Finance</a>
-    <a href="tech.html">💻 Tech</a>
-    <a href="food.html">🍜 Food</a>
-    <a href="ai.html">🤖 AI</a>
-    <a href="psychology.html">🧠 Psychology</a>
-  </nav>
+    <div class="navbar">
+        <div class="logo">Global Insight Hub</div>
+
+        <nav>
+            <a href="news.html">News</a>
+            <a href="wellbeing.html">Well-being</a>
+            <a href="science.html">Science</a>
+            <a href="finance.html">Finance</a>
+            <a href="tech.html">Tech</a>
+            <a href="food.html">Food</a>
+            <a href="ai.html">AI</a>
+            <a href="psychology.html">Psychology</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <h2>🧠 Psychology & Human Behavior</h2>
-  <p>Understand how people think, feel, and act — from mindset to mental health and decision-making.</p>
+    <div class="hero-grid">
+
+        <div>
+            <div class="badge">PSYCHOLOGY FEATURE</div>
+            <h1>Understanding the Mind Changes Everything</h1>
+            <p>
+                Psychology explores why people think, feel, choose, connect, grow,
+                and sometimes struggle. Learning how the mind works can improve
+                relationships, confidence, productivity, and emotional strength.
+            </p>
+        </div>
+
+        <div class="mind-panel">
+            <h3>The Human Mind</h3>
+
+            <div class="rings">
+                <div class="ring-card">
+                    <strong>Emotion</strong>
+                    <span>Feelings guide attention, motivation, and memory.</span>
+                </div>
+
+                <div class="ring-card">
+                    <strong>Habits</strong>
+                    <span>Repeated actions shape identity over time.</span>
+                </div>
+
+                <div class="ring-card">
+                    <strong>Focus</strong>
+                    <span>Attention is valuable and easily distracted.</span>
+                </div>
+
+                <div class="ring-card">
+                    <strong>Growth</strong>
+                    <span>Mindsets can influence resilience and learning.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<!-- FEATURED -->
 <section class="container">
-  <h2>🔥 Featured Story</h2>
 
-  <a href="article-psychology1.html" class="card">
-    <img src="https://source.unsplash.com/400x250/?mind,brain">
-    <h3>⚠️ Why Your Brain Is Addicted to Short Videos — And How It’s Changing You</h3>
-    <p class="meta">🔥 Trending • 4 min read</p>
-    <p>Short-form content is reshaping attention spans worldwide. Here’s what’s happening inside your brain.</p>
-  </a>
-</section>
+    <div class="main">
 
-<!-- TRENDING -->
-<section class="container">
-  <h2>📈 Trending Psychology Topics</h2>
+        <div class="feature">
+            <h2>Why Psychology Matters in Daily Life</h2>
+            <p>
+                Psychology is not only for textbooks or clinics. It appears in
+                decision-making, friendships, motivation, stress, confidence,
+                habits, leadership, and communication.
+            </p>
 
-  <div class="grid">
+            <p>
+                The better we understand ourselves, the better choices we can make.
+            </p>
+        </div>
 
-    <a href="article-psychology2.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?stress">
-      <h3>Stress Levels Are Rising Globally</h3>
-      <p class="meta">3 min read</p>
-      <p>Why modern life is increasing anxiety and what you can do about it.</p>
-    </a>
+        <div class="grid">
 
-    <a href="article-psychology3.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?focus">
-      <h3>Why You Can’t Focus Anymore</h3>
-      <p class="meta">5 min read</p>
-      <p>Distractions are everywhere — here’s how your brain is adapting.</p>
-    </a>
+            <div class="card">
+                <h4>🧠 Motivation</h4>
+                <p>
+                    Progress becomes easier when goals feel meaningful and manageable.
+                </p>
+            </div>
 
-    <a href="article-psychology4.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?habits">
-      <h3>The Science of Building Habits</h3>
-      <p class="meta">4 min read</p>
-      <p>Simple psychological tricks to make habits stick.</p>
-    </a>
+            <div class="card">
+                <h4>💬 Relationships</h4>
+                <p>
+                    Listening, empathy, and trust are core psychological skills.
+                </p>
+            </div>
 
-  </div>
-</section>
+            <div class="card">
+                <h4>📈 Confidence</h4>
+                <p>
+                    Confidence often grows through action, not waiting to feel ready.
+                </p>
+            </div>
 
-<!-- LATEST -->
-<section class="container">
-  <h2>📰 Latest Articles</h2>
+        </div>
 
-  <div class="grid">
+        <div class="feature">
+            <h2>The Future of Psychology</h2>
+            <p>
+                New research in neuroscience, behavioural science, and digital wellbeing
+                is helping people manage modern challenges more effectively.
+                Understanding the mind may become one of the most valuable skills of the future.
+            </p>
+        </div>
 
-    <a href="article-psychology5.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?sleep">
-      <h3>Sleep Deprivation Is Affecting Your Brain</h3>
-      <p class="meta">2 min read</p>
-      <p>Not getting enough sleep has deeper psychological effects than you think.</p>
-    </a>
+    </div>
 
-    <a href="article-psychology6.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?social-media">
-      <h3>Social Media and Mental Health</h3>
-      <p class="meta">4 min read</p>
-      <p>How constant scrolling is impacting self-esteem and mood.</p>
-    </a>
+    <aside class="sidebar">
 
-  </div>
-</section>
+        <div class="side">
+            <h3>Mindset Quote</h3>
+            <p class="quote">
+                Awareness is the first step to change.
+            </p>
+        </div>
 
-<!-- CTA -->
-<section class="container">
-  <div class="card" style="text-align:center;">
-    <h3>🚀 Want to improve your mindset?</h3>
-    <p>Explore more psychology insights and learn how to think better, focus more, and live smarter.</p>
-  </div>
+        <div class="side">
+            <h3>Trending Topics</h3>
+            <p>Attention spans, confidence habits, emotional intelligence, stress recovery, behaviour design.</p>
+        </div>
+
+        <div class="side">
+            <h3>Quick Insight</h3>
+            <p>
+                Small daily actions often influence mental wellbeing more than rare big moments.
+            </p>
+        </div>
+
+    </aside>
+
 </section>
 
 <footer>
-  <p>© 2026 Global Insight Hub. All rights reserved.</p>
+    © 2026 Global Insight Hub — Explore the Mind
 </footer>
 
 </body>

@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -18,47 +20,68 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(180deg, #020617, #0f172a);
   color: #e2e8f0;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
 header {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+  background: rgba(2, 6, 23, 0.85);
   padding: 15px 30px;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-header h1 {
-  font-size: 1.8rem;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav {
-  margin-top: 8px;
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
   color: #38bdf8;
-  margin: 0 12px;
+  margin: 6px 10px;
   text-decoration: none;
-  font-weight: 500;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #7dd3fc;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* HERO */
 .hero {
-  padding: 100px 20px;
   text-align: center;
+  padding: 120px 20px;
   background: radial-gradient(circle at center, #0ea5e9 0%, transparent 60%);
 }
 
-.hero h2 {
-  font-size: 3rem;
+.hero h1 {
+  font-size: 3.5rem;
   font-weight: 700;
 }
 
@@ -71,7 +94,7 @@ nav a:hover {
 
 .cta-btn {
   margin-top: 25px;
-  padding: 14px 24px;
+  padding: 14px 28px;
   border-radius: 999px;
   border: none;
   font-weight: 600;
@@ -82,20 +105,60 @@ nav a:hover {
 }
 
 .cta-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #38bdf8;
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #38bdf8;
 }
 
-/* SECTIONS */
+/* CONTAINER */
 .container {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
+/* HEADINGS */
 h2 {
   margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+/* FEATURED */
+.featured {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  background: rgba(30,41,59,0.6);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.featured img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 25px;
+}
+
+.tag {
+  display: inline-block;
+  background: #38bdf8;
+  color: #020617;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.featured-content h3 {
   font-size: 1.8rem;
+}
+
+.featured-content p {
+  margin: 10px 0;
+  color: #94a3b8;
 }
 
 /* GRID */
@@ -105,70 +168,130 @@ h2 {
   gap: 20px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   display: block;
   text-decoration: none;
   background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 16px;
-  transition: 0.3s;
+  transition: 0.35s;
   border: 1px solid rgba(255,255,255,0.05);
   color: #e2e8f0;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
   border: 1px solid #38bdf8;
-  box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+  box-shadow: 0 15px 35px rgba(56,189,248,0.25);
 }
 
 .card img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .card h3 {
   color: #38bdf8;
-  margin-bottom: 8px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 6px 0;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   color: #64748b;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Global Insight Hub</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tech.html">Tech</a>
-    <a href="ai.html">AI</a>
-    <a href="finance.html">Finance</a>
-    <a href="science.html">Science</a>
-    <a href="food.html">Food</a>
-    <a href="wellbeing.html">Wellbeing</a>
-    <a href="news.html">News</a>
-    <a href="psychology.html">Psychology</a>
-  </nav>
+  <div class="nav">
+    <div class="logo">Global Insight Hub</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="wellbeing.html">Well-being</a>
+      <a href="science.html">Science</a>
+      <a href="finance.html">Finance</a>
+      <a href="tech.html">Tech</a>
+      <a href="food.html">Food</a>
+      <a href="ai.html">AI</a>
+      <a href="psychology.html">Psychology</a>
+    </div>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h2>Stay Ahead of the World</h2>
-  <p>Breaking insights across AI, tech, finance, psychology, and global trends — all in one place.</p>
-  <button class="cta-btn" onclick="window.location.href='news.html'">
-    Explore Now
-  </button>
+  <h1>Stay Ahead of the Future</h1>
+  <p>AI, Finance, Psychology, Tech & Global Trends — curated for the next generation.</p>
+  <button class="cta-btn" onclick="window.location.href='news.html'">Explore Now</button>
+</section>
+
+<!-- FEATURED -->
+<section class="container">
+  <h2>Featured</h2>
+  <div class="featured">
+    <img src="https://source.unsplash.com/1000x500/?future,technology">
+    <div class="featured-content">
+      <span class="tag">AI</span>
+      <h3>The AI Shift Is Happening Faster Than Expected</h3>
+      <p>From automation to creativity, AI is transforming how people live and work.</p>
+      <p class="meta">6 min read • 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING -->
+<section class="container">
+  <h2>Trending</h2>
+  <div class="grid">
+
+    <a href="article-ai.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?ai">
+      <h3>AI Replacing Jobs?</h3>
+      <p class="meta">5 min read</p>
+      <p>The truth behind automation fears.</p>
+    </a>
+
+    <a href="article-finance.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?stocks">
+      <h3>Markets Are Volatile</h3>
+      <p class="meta">4 min read</p>
+      <p>What investors are doing right now.</p>
+    </a>
+
+    <a href="article-health.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?mental-health">
+      <h3>Mental Health Rise</h3>
+      <p class="meta">3 min read</p>
+      <p>Why wellbeing is now a priority.</p>
+    </a>
+
+  </div>
 </section>
 
 <!-- TOPICS -->
@@ -176,114 +299,15 @@ footer {
   <h2>Explore Topics</h2>
   <div class="grid">
 
-    <a href="tech.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?technology">
-      <h3>Tech</h3>
-      <p>Innovation shaping the future.</p>
-    </a>
+    <a href="tech.html" class="card"><h3>Tech</h3></a>
+    <a href="ai.html" class="card"><h3>AI</h3></a>
+    <a href="finance.html" class="card"><h3>Finance</h3></a>
+    <a href="wellbeing.html" class="card"><h3>Well-being</h3></a>
+    <a href="food.html" class="card"><h3>Food</h3></a>
+    <a href="psychology.html" class="card"><h3>Psychology</h3></a>
+    <a href="science.html" class="card"><h3>Science</h3></a>
+    <a href="news.html" class="card"><h3>News</h3></a>
 
-    <a href="ai.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?artificial-intelligence">
-      <h3>AI</h3>
-      <p>The rise of artificial intelligence.</p>
-    </a>
-
-    <a href="finance.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?finance,stock">
-      <h3>Finance</h3>
-      <p>Markets and money insights.</p>
-    </a>
-
-    <a href="wellbeing.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?wellbeing,health">
-      <h3>Wellbeing</h3>
-      <p>Better mental and physical health.</p>
-    </a>
-
-    <a href="food.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?food">
-      <h3>Food</h3>
-      <p>Global flavors and trends.</p>
-    </a>
-
-    <a href="psychology.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?psychology">
-      <h3>Psychology</h3>
-      <p>Understand human behavior.</p>
-    </a>
-
-    <a href="science.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?science">
-      <h3>Science</h3>
-      <p>New discoveries and research.</p>
-    </a>
-
-    <a href="news.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?news">
-      <h3>News</h3>
-      <p>What’s happening worldwide.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- TRENDING -->
-<section class="container">
-  <h2>Trending Now</h2>
-  <div class="grid">
-
-    <a href="article-ai.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?ai,future">
-      <h3>AI Revolution</h3>
-      <p>AI tools are reshaping how people work and create content.</p>
-    </a>
-
-    <a href="article-finance.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?stock,market">
-      <h3>Market Shifts</h3>
-      <p>Investors reacting to global economic changes.</p>
-    </a>
-
-    <a href="article-health.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?mental-health">
-      <h3>Mental Health Focus</h3>
-      <p>More people prioritizing wellbeing in daily life.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- LATEST ARTICLES -->
-<section class="container">
-  <h2>Latest Articles</h2>
-  <div class="grid">
-
-    <a href="article1.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?finance">
-      <h3>Global Markets Are Shifting Fast</h3>
-      <p>Experts warn of major changes in 2026 economy.</p>
-    </a>
-
-    <a href="article2.html" class="card">
-      <img src="https://source.unsplash.com/400x250/?ai,robot">
-      <h3>AI Is Replacing Jobs?</h3>
-      <p>What this means for young people entering work.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- AD SPACE -->
-<div style="text-align:center; margin:40px;">
-  <p>Ad Space (Google AdSense later)</p>
-</div>
-
-<!-- CONTACT -->
-<section class="container">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: your@email.com</p>
-    <p>Social: Add your links here</p>
   </div>
 </section>
 

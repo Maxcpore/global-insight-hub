@@ -1,23 +1,300 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI News</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #020617, #020617, #0f172a);
+  color: #e2e8f0;
+}
+
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(2,6,23,0.85);
+  padding: 15px 30px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #38bdf8;
+  margin: 6px 10px;
+  text-decoration: none;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: radial-gradient(circle at center, #22d3ee 0%, transparent 60%);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  margin-top: 15px;
+  color: #94a3b8;
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.cta-btn {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #22d3ee, #38bdf8);
+  color: #020617;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #22d3ee;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* FEATURED */
+.featured {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  margin-bottom: 50px;
+  background: rgba(30,41,59,0.6);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.featured img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 25px;
+}
+
+.tag {
+  display: inline-block;
+  background: #22d3ee;
+  color: #020617;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.featured h2 {
+  font-size: 1.9rem;
+}
+
+.featured p {
+  color: #94a3b8;
+  margin: 10px 0;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(30,41,59,0.6);
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.35s;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border: 1px solid #22d3ee;
+  box-shadow: 0 15px 35px rgba(34,211,238,0.3);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #22d3ee;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 6px 0;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+</style>
 </head>
+
 <body>
 
-  <h1>Artificial Intelligence</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<header>
+  <div class="nav">
+    <div class="logo">Global Insight Hub</div>
 
-  <h2>AI Insights</h2>
-  <ul>
-    <li>AI is being used in content creation, coding, and automation</li>
-    <li>New tools are emerging weekly across industries</li>
-    <li>Machine learning models are improving rapidly</li>
-  </ul>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="wellbeing.html">Well-being</a>
+      <a href="science.html">Science</a>
+      <a href="finance.html">Finance</a>
+      <a href="tech.html">Tech</a>
+      <a href="food.html">Food</a>
+      <a href="ai.html">AI</a>
+      <a href="psychology.html">Psychology</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Artificial Intelligence</h1>
+  <p>Explore the rise of AI, automation, and the technologies shaping the future of humanity.</p>
+  <button class="cta-btn">Explore AI Trends</button>
+</section>
+
+<!-- FEATURED -->
+<section class="container">
+  <div class="featured">
+    <img src="https://source.unsplash.com/1000x500/?ai,future">
+
+    <div class="featured-content">
+      <span class="tag">AI FEATURE</span>
+      <h2>AI Is Reshaping Every Industry</h2>
+      <p>From jobs to creativity, artificial intelligence is transforming how society works.</p>
+      <p class="meta">6 min read • 2026</p>
+    </div>
+  </div>
+
+  <!-- ARTICLES -->
+  <div class="grid">
+
+    <a href="article-ai.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?robot">
+      <h3>Will AI Replace Jobs?</h3>
+      <p class="meta">5 min read</p>
+      <p>The reality behind automation fears.</p>
+    </a>
+
+    <a href="article-ai2.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?machine-learning">
+      <h3>Machine Learning Breakthrough</h3>
+      <p class="meta">4 min read</p>
+      <p>New models are becoming more powerful.</p>
+    </a>
+
+    <a href="article-ai3.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?ai,art">
+      <h3>AI in Creativity</h3>
+      <p class="meta">3 min read</p>
+      <p>Artists and creators are adapting fast.</p>
+    </a>
+
+    <a href="article-ai4.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?data">
+      <h3>Data Is Power</h3>
+      <p class="meta">4 min read</p>
+      <p>Why data drives modern AI systems.</p>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Global Insight Hub. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

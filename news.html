@@ -1,24 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>News</title>
-  <style>
-    body { font-family: Arial; background:#0b1220; color:#e2e8f0; padding:20px; }
-    a { color:#38bdf8; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News | Global Insight Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e2e8f0;
+}
+
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(2,6,23,0.85);
+  padding: 15px 30px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #38bdf8;
+  margin: 6px 10px;
+  text-decoration: none;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BREAKING BAR */
+.breaking {
+  background: #ef4444;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.breaking span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 12s linear infinite;
+  font-weight: 600;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* FEATURED NEWS */
+.featured {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.featured img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag {
+  background: #38bdf8;
+  color: #020617;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.featured h2 {
+  font-size: 2rem;
+}
+
+.featured p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(30,41,59,0.6);
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 10px 25px rgba(56,189,248,0.25);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 6px 0;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+</style>
 </head>
+
 <body>
 
-  <h1>News</h1>
-  <p><a href="index.html">← Back Home</a></p>
+<header>
+  <div class="nav">
+    <div class="logo">Global Insight Hub</div>
 
-  <h2>Global Updates</h2>
-  <ul>
-    <li>Technology continues to influence global economies</li>
-    <li>Climate and environmental issues remain a major focus</li>
-    <li>International markets and policies are constantly evolving</li>
-    <li>Digital transformation is impacting industries worldwide</li>
-  </ul>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="wellbeing.html">Well-being</a>
+      <a href="science.html">Science</a>
+      <a href="finance.html">Finance</a>
+      <a href="tech.html">Tech</a>
+      <a href="food.html">Food</a>
+      <a href="ai.html">AI</a>
+      <a href="psychology.html">Psychology</a>
+    </div>
+  </div>
+</header>
+
+<!-- BREAKING NEWS -->
+<div class="breaking">
+  <span>🔥 Breaking: AI disruption accelerates in 2026 • Global markets react • Mental health awareness rises worldwide</span>
+</div>
+
+<!-- MAIN -->
+<section class="container">
+
+  <!-- FEATURED -->
+  <div class="featured">
+    <img src="https://source.unsplash.com/800x500/?world,news">
+
+    <div class="featured-content">
+      <span class="tag">Breaking</span>
+      <h2>Global Trends Are Shifting Faster Than Expected</h2>
+      <p>From AI to finance, major changes are reshaping how people live, work, and invest in 2026.</p>
+      <p class="meta">6 min read • Today</p>
+    </div>
+  </div>
+
+  <!-- NEWS GRID -->
+  <div class="grid">
+
+    <a href="article1.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?economy">
+      <h3>Economic Pressure Rising</h3>
+      <p class="meta">4 min read</p>
+      <p>Experts warn of instability across global markets.</p>
+    </a>
+
+    <a href="article2.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?ai,robot">
+      <h3>AI Replacing Jobs?</h3>
+      <p class="meta">5 min read</p>
+      <p>Young people face a changing job landscape.</p>
+    </a>
+
+    <a href="article3.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?technology">
+      <h3>Tech Innovation Surge</h3>
+      <p class="meta">3 min read</p>
+      <p>Startups are pushing boundaries faster than ever.</p>
+    </a>
+
+    <a href="article4.html" class="card">
+      <img src="https://source.unsplash.com/400x250/?mental-health">
+      <h3>Mental Health Awareness</h3>
+      <p class="meta">4 min read</p>
+      <p>Well-being becomes a global priority.</p>
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Global Insight Hub. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
